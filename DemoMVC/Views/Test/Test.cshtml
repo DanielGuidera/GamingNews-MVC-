@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Test";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="text" name="userData"/>
+    <input type="submit" name="postAction" value="Post..." />
+    <input type="button" name="list" value="Get List" />
+    <h3>@ViewBag.Message</h3>    
+}
+
