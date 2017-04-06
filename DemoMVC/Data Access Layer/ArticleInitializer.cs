@@ -7,7 +7,7 @@ using DemoMVC.Models;
 
 namespace DemoMVC.Data_Access_Layer
 {
-    public class ArticleInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ArticleContext>
+    public class ArticleInitializer : System.Data.Entity.DropCreateDatabaseAlways<ArticleContext>
     {
         protected override void Seed(ArticleContext context)
         {
@@ -17,7 +17,8 @@ namespace DemoMVC.Data_Access_Layer
                 new ArticleModels {ID = 2, title = "The Last of Us", thumbnail = "https://c2.staticflickr.com/6/5597/31396458265_93118cec4a_z.jpg" },
                 new ArticleModels {ID = 3, title = "Shadow of War", thumbnail = "https://cdn.gamerant.com/wp-content/uploads/middle-earth-shadow-of-war-mithril-edition-title.jpg" },
                 new ArticleModels {ID = 4, title = "Persona 5", thumbnail = "http://vignette4.wikia.nocookie.net/megamitensei/images/6/68/P5_illustration_by_Shigenori_Soejima.jpg/revision/latest?cb=20150919150530" },
-                new ArticleModels {ID = 5, title = "Horizon Zero Dawn", thumbnail = "https://i.ytimg.com/vi/GauAr4lWjyw/maxresdefault.jpg" }
+                new ArticleModels {ID = 5, title = "Horizon Zero Dawn", thumbnail = "https://i.ytimg.com/vi/GauAr4lWjyw/maxresdefault.jpg" },
+                new ArticleModels {ID = 6, title = "Ori and the Blind Forest", thumbnail = "http://cdn.edgecast.steamstatic.com/steam/apps/261570/header.jpg?t=1462923075" }
             };
 
             articles.ForEach(s => context.Articles.Add(s));
