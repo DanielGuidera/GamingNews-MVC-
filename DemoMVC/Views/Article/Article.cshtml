@@ -1,7 +1,12 @@
-﻿
+﻿@using DemoMVC.Models;
 @{
     ViewBag.Title = "Article";
 }
 
-<h2>Article</h2>
+@{
+    ArticleModels articleInfo = (ArticleModels)ViewData["ArticleList"];
+}
+
+<p>articleInfo.blurb</p>
+<p>articleInfo.link</p>
 

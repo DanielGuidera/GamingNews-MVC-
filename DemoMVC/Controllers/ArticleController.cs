@@ -11,9 +11,12 @@ namespace DemoMVC.Controllers
     public class ArticleController : Controller
     {        
         // GET: Article
-        public ActionResult Read()
-        {
-            
+        public ActionResult Read(int _ID)
+        {            
+            //string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ArticleContext"].ToString();
+            //LinqToSQLDataContext db = new LinqToSQLDataContext(connectionString);                       
+
+            //ViewData["ArticleInfo"] = from myRow in db.GetTable<ArticleModels>() where myRow.ID.Equals(_ID) select myRow;
             return View("Article");
         }
 

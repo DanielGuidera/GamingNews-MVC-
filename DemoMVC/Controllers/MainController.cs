@@ -16,6 +16,6 @@ namespace DemoMVC.Controllers
         {            
             ViewData["ArticleList"] = db.Articles.ToList();
             return View();
-        }         
+        }
     }
 }
