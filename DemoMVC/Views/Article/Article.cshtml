@@ -4,5 +4,9 @@
 }
 
 @{
-    ArticleModels articleInfo = (ArticleModels)ViewData["ArticleList"];
+    ArticleModels articleInfo = (ArticleModels)ViewData["ArticleInfo"];
 }
+
+<p>@articleInfo.title</p>
+<p>@articleInfo.blurb</p>
+<p>@articleInfo.link</p>

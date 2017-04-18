@@ -12,17 +12,21 @@ namespace DemoMVC.Controllers
     {        
         // GET: Article
         public ActionResult Read(int _ID)
-        {            
-            //string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ArticleContext"].ToString();
-            //LinqToSQLDataContext db = new LinqToSQLDataContext(connectionString);                       
-
-            //ViewData["ArticleInfo"] = from myRow in db.GetTable<ArticleModels>() where myRow.ID.Equals(_ID) select myRow;
+        {
+            GetArticle(_ID);
             return View("Article");
         }
 
         public ActionResult Report()
         {
             return View();
+        }
+
+        private void GetArticle(int ID)
+        {
+            var context = new ArticleContext();
+            var articleData = context.Articles.Find(ID);
+            ViewData["ArticleInfo"] = articleData;
         }
     }
 }
