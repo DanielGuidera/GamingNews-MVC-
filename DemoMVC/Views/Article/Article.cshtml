@@ -4,7 +4,7 @@
 }
 
 @{
-    ArticleModels articleInfo = (ArticleModels)ViewData["ArticleInfo"];
+    ArticleModels articleInfo = (ArticleModels)ViewData["ArticleInfo"];       
 }
 <p></p>
 <div class="Top">
@@ -34,16 +34,11 @@
             </div>
             <div class="modal-body">
                 <div class="btn-group" role="group" aria-label="...">
-                    @Html.ActionLink("Spam", "Read", "Article", new { @class = "btn btn-default" })
-                    @Html.ActionLink("Fake", "Read", "Article", new { @class = "btn btn-default" })
-                    @Html.ActionLink("Old", "Read", "Article", new { @class = "btn btn-default" })
+                    @Html.ActionLink("Spam", "Report", "Article", new { articleID = articleInfo.ID, reportType = ReportModel.reportType.Spam }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Fake", "Report", "Article", new { articleID = articleInfo.ID, reportType = ReportModel.reportType.Fake }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Old", "Report", "Article", new { articleID = articleInfo.ID, reportType = ReportModel.reportType.Old }, new { @class = "btn btn-default" })
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-@*<p>@articleInfo.title</p>
-<p>@articleInfo.blurb</p>
-<p>@articleInfo.link</p>*@

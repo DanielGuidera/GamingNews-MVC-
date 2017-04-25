@@ -27,9 +27,12 @@ namespace DemoMVC.Controllers
             }            
         }
 
-        public ActionResult Report()
+        public ActionResult Report(int articleID, ReportModel.reportType reportType)
         {
-            return View();
+            ReportAccess access = new ReportAccess();
+            ViewData["ReportMessage"] = access.ReportArticle(articleID, reportType);
+            
+            return View("ReportMessage");                    
         }        
     }
 }
