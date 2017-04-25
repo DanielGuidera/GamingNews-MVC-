@@ -13,5 +13,13 @@ namespace DemoMVC.Models
         public string thumbnail { get; set; }
         public string blurb { get; set; }
         public string link { get; set; }
+        public Status status { get; set; }
+        public bool reported { get; set; }
+        public enum Status
+        {
+            Approved,
+            Pending,
+            Failed
+        };        
     }
 }

@@ -10,12 +10,11 @@ namespace DemoMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private ArticleContext db = new ArticleContext();
-
-        public ActionResult HomePage()
-        {            
-            ViewData["ArticleList"] = db.Articles.ToList();
+        private ArticleAccess access = new ArticleAccess();
+        public ActionResult HomePage(ArticleModels.Status status = ArticleModels.Status.Approved)
+        {           
+            ViewData["ArticleList"] = access.retrieveArticles(status);
             return View();
-        }
+        }       
     }
 }

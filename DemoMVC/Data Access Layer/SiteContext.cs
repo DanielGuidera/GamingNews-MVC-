@@ -4,21 +4,22 @@ using System.Linq;
 using System.Web;
 using DemoMVC.Models;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DemoMVC.Data_Access_Layer
 {
-    public class ArticleContext : DbContext
+    public class SiteContext : DbContext
     {
-        public ArticleContext() : base("ArticleContext")
+        public SiteContext() : base("SiteContext")
         {
-        }
 
+        }
         public DbSet<ArticleModels> Articles { get; set; }
+        public DbSet<ReportModel> Reports { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
     }
+
 }

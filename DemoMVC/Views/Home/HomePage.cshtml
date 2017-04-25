@@ -4,21 +4,15 @@
     ViewBag.Title = "HomePage";
 }
 
-@*<style>
-    p.description{width: 11em; word-break:normal}
-    div.Top{background-color:bisque}
-</style>*@
-
 @{    
-    List<ArticleModels> articleList = (List<ArticleModels>)ViewData["ArticleList"];
-    ArticleModels[] newList = articleList.ToArray();
+    List<ArticleModels> articleList = (List<ArticleModels>)ViewData["ArticleList"];    
 }
 <p></p>
 <div class="Top">
     <div class="well well-sm" style="width: 1000px">
         <div class="row" id="TopItems">
             @{
-                foreach (ArticleModels article in newList)
+                foreach (ArticleModels article in articleList)
                 {
                     <div class="col-sm-2 col-md-2">
                         <div class="thumbnail">

@@ -13,20 +13,23 @@ namespace DemoMVC.Controllers
         // GET: Article
         public ActionResult Read(int _ID)
         {
-            GetArticle(_ID);
-            return View("Article");
+            ArticleModels articleData;
+
+            ArticleAccess access = new ArticleAccess();
+            if (access.GetArticleForRead(out articleData, _ID))
+            {
+                ViewData["ArticleInfo"] = articleData;
+                return View("Article");
+            }
+            else
+            {
+                return View("Error");
+            }            
         }
 
         public ActionResult Report()
         {
             return View();
-        }
-
-        private void GetArticle(int ID)
-        {
-            var context = new ArticleContext();
-            var articleData = context.Articles.Find(ID);
-            ViewData["ArticleInfo"] = articleData;
-        }
+        }        
     }
 }

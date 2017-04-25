@@ -36,7 +36,7 @@ namespace DemoMVC.Data_Access_Layer
     #endregion
 		
 		public LinqToSQLDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["ArticleContext"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SiteContext"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
